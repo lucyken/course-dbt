@@ -65,10 +65,10 @@ from user_orders_lifetime
 group by 1
 ```
 
-| CUSTOMER_ORDER_BINS | COUNT(USER_ID) |
-| 3+ Purchases | 71 |
-| 1 Purchases | 25 |
-| 2 Purchases | 28 |
+Answers: 
+3+ Purchases, 71 
+1 Purchases,  25
+2 Purchases,  28
 
 
 - On average, how many unique sessions do we have per hour?
