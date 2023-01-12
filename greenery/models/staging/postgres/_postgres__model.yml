@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_addresses
+    description: "User addresses"
+  - name: stg_events
+    description: "Website evets"
+  - name: stg_order_items
+    description: "Product and quantity details for an order"
+  - name: stg_orders
+    description: "Order details"
+  - name: stg_products
+    description: "Product details"
+  - name: stg_promos
+    description: "Promotional offers"
+  - name: stg_users
+    description: "User accounts"
