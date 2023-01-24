@@ -9,6 +9,11 @@ models:
     description: "Product and quantity details for an order"
   - name: stg_orders
     description: "Order details"
+    columns:
+      - name: order_total_cost
+        tests:
+          - positive_values
+          - non_zero
   - name: stg_products
     description: "Product details"
   - name: stg_promos

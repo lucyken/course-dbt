@@ -4,27 +4,24 @@ sources:
   - name: postgres
     schema: public
     database: raw
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
     tables:
       - name: orders
         loaded_at_field: created_at
       - name: products
-        loaded_at_field: created_at
       - name: addresses
-        loaded_at_field: created_at
       - name: users
         loaded_at_field: created_at
       - name: events
         loaded_at_field: created_at
       - name: order_items
-        loaded_at_field: created_at
       - name: promos
-        loaded_at_field: created_at
 
 quoting:
   database: false
   schema: false
   identifier: false
-
-freshness:
-  warn_after: {count: 24, period: hour}
-  error_after: {count: 48, period: hour}
