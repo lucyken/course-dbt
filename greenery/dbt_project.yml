@@ -36,3 +36,10 @@ models:
     # Config indicated by + and applies to all files under models/example/
     staging:
       +materialized: view
+  
+  +post-hook: 
+    - "GRANT SELECT ON TO {{ this}} REPORTING"
+
+on-run-end:
+  - "GRANT USAGE ON SCHEMA {{ schema }} TO reporting"
+  - "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"

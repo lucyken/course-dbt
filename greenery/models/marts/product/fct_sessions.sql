@@ -13,8 +13,9 @@ with stg_events as (
 select
     session_id,
     {% for event_type in event_types %}
-    sum(case when stg_events.event_type = event_type then 1 else 0 end) as {{event_type}}_count,
+    sum(case when stg_events.event_type = '{{event_type}}' then 1 else 0 end) as {{event_type}}_count,
     {% endfor %}
+    count(distinct order_id) as order_count_count,
     min(event_created_at_utc) as session_start_date, 
     max(event_created_at_utc) as session_end_date 
 from stg_events 

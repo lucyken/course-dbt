@@ -1,7 +1,13 @@
 version: 2
 
 models:
-  - name: customer_cohort
+  - name: rpt_customer_cohort
+    description: Looks at customer purchase behavior over time to understand lifetime value and repeat purchase behaviour. 
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns:
+          - user_id
+          - customer_cohort_month
     columns:
       - name: months_since_order_date
         tests:

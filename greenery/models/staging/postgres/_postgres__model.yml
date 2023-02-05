@@ -3,10 +3,22 @@ version: 2
 models:
   - name: stg_addresses
     description: "User addresses"
+    columns:
+      - name: address_id
+        tests:
+          - unique
   - name: stg_events
     description: "Website evets"
+    columns:
+      - name: event_id
+        tests:
+          - unique
   - name: stg_order_items
     description: "Product and quantity details for an order"
+    columns:
+      - name: order_item_id
+        tests:
+          - unique
   - name: stg_orders
     description: "Order details"
     columns:
@@ -14,9 +26,24 @@ models:
         tests:
           - positive_values
           - non_zero
+      - name: order_id
+        tests:
+          - unique
   - name: stg_products
     description: "Product details"
+    columns:
+      - name: product_id
+        tests:
+          - unique
   - name: stg_promos
     description: "Promotional offers"
+    columns:
+      - name: promo_id
+        tests:
+          - unique
   - name: stg_users
     description: "User accounts"
+    columns:
+      - name: user_id
+        tests:
+          - unique

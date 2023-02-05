@@ -9,12 +9,12 @@ with users as (
 ), 
 
 fact_orders as (
-    select * from {{ ref("fact_orders") }}
+    select * from {{ ref("fct_orders") }}
 )
 
 select 
     users.user_id, 
-    users.cohort_month as customer_cohort,
+    users.cohort_month as customer_cohort_month,
     users.billing_address_country as customer_country,
     datediff(month, date(order_created_at_utc), users.first_order_date) as months_since_order_date, 
     sum(fact_orders.order_cost) as order_value,

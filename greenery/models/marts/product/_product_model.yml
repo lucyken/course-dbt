@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fct_product_events
+    description: summarised product page views and orders by day to to understand product conversion
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+              - product_id
+              - event_created_day
+  - name: fct_sessions
+    description: summarised user sessions to understand site conversion and session behavior. 
+    columns:
+      - name: session_id
+        tests:
+          - unique
+          - not_null

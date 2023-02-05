@@ -2,14 +2,23 @@ version: 2
 
 models:
   - name: dim_users
+    description: summary of user information
     columns:
       - name: user_id
         tests:
           - unique
           - not_null
-  - name: fact_orders
+  - name: fct_orders
+    description: detailed summary of orders 
     columns:
       - name: order_id
+        tests:
+          - unique
+          - not_null
+  - name: fct_order_items
+    description: detailed summary of order items
+    columns: 
+      - name: order_item_id
         tests:
           - unique
           - not_null
